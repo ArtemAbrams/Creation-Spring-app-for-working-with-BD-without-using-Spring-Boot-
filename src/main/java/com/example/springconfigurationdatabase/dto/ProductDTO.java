@@ -1,23 +1,19 @@
-package com.example.springconfigurationdatabase.entity;
+package com.example.springconfigurationdatabase.dto;
 
 import com.example.springconfigurationdatabase.enums.Status;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
 import lombok.*;
 
-@Entity
-@Table(name = "products")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = false)
-public class Product extends BasicEntity {
+@ToString
+@EqualsAndHashCode
+public class ProductDTO{
     private String name;
     private Long price;
-    @Enumerated(EnumType.STRING)
     private Status status;
 }

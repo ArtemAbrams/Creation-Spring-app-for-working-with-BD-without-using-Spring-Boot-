@@ -34,6 +34,8 @@ public class RootConfig {
         emf.setDataSource(createDataSource());
         emf.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         emf.setPackagesToScan("com.example.springconfigurationdatabase.entity");
+        emf.getJpaPropertyMap().put("hibernate.show_sql", true);
+        emf.getJpaPropertyMap().put("hibernate.format_sql", true);
         return emf;
     }
     @Bean
