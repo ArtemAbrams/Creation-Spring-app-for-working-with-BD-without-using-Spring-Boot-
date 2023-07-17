@@ -7,6 +7,7 @@ import com.example.springconfigurationdatabase.mapper.ProductMapper;
 import com.example.springconfigurationdatabase.repository.ProductRepository;
 import com.example.springconfigurationdatabase.service.ProductService;
 import jakarta.transaction.Transactional;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDTO updateProductByStatus(Long id, Status status) {
         var product = productRepository.findById(id)
-                .orElseThrow(()-> new NotFoundProductException());
+                .orElseThrow(NotFoundProductException::new);
         product.setStatus(status);
         return ProductMapper.mapToProductDto(product);
     }

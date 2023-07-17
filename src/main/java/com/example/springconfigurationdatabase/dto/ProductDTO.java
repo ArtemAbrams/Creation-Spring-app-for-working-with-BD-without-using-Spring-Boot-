@@ -11,7 +11,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode
 public class ProductDTO{
     private String name;
     private Long price;
